@@ -191,13 +191,13 @@ int module_init(struct processing_module *mod);
 void *mod_balloc_align(struct processing_module *mod, size_t size, size_t alignment);
 static inline void *mod_balloc(struct processing_module *mod, size_t size)
 {
-	return mod_balloc_align(mod, size, 0);
+	return mod_balloc_align(mod, size, 4);
 }
 
 void *mod_alloc_align(struct processing_module *mod, size_t size, size_t alignment);
 static inline void *mod_alloc(struct processing_module *mod, size_t size)
 {
-	return mod_alloc_align(mod, size, 0);
+	return mod_alloc_align(mod, size, 4);
 }
 
 static inline void *mod_zalloc(struct processing_module *mod, size_t size)
